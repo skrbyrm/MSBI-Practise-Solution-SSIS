@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="KUASAR_MSSQLSERVER2019.CustomerDW"
   DTS:DTSID="{1823B1C1-DBA2-44D6-9F93-8D6680233B7F}"

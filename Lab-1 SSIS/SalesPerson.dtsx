@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{07647EE4-16D0-4098-818A-B24F3F53A51F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{A2236C09-3723-42AC-A146-13E449A126BF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9C938081-A70C-4BCA-AF98-1B6D682A6283}"
+      DTS:ObjectName="KUASAR\MSSQLSERVER2019.CustomerDataWareHouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=KUASAR\MSSQLSERVER2019;Initial Catalog=CustomerDataWareHouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9C938081-A70C-4BCA-AF98-1B6D682A6283}KUASAR\MSSQLSERVER2019.CustomerDataWareHouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
       DTS:CreationName="OLEDB"
@@ -287,8 +299,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Insert Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
-                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
+                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -304,27 +316,27 @@
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[PersonIDint]"
                       cachedDataType="i4"
                       cachedName="PersonIDint"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonId]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[PersonIDint]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[UPersonName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="UPersonName"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonName]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[UPersonName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonId]"
                       dataType="i4"
-                      name="PersonID" />
+                      name="SalesPersonId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonName]"
+                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonName]"
                       dataType="wstr"
                       length="50"
-                      name="PersonName" />
+                      name="SalesPersonName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -371,7 +383,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimSalesPerson] SET [PersonName] = ? WHERE [PersonID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimSalesPerson] SET [SalesPersonName] = ? WHERE [SalesPersonId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -380,8 +392,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
-                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
+                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -600,7 +612,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [PersonID], [PersonName] FROM [dbo].[DimSalesPerson]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SalesPersonId], [SalesPersonName] FROM [dbo].[DimSalesPerson]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -638,8 +650,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Slowly Changing Dimension.Connections[LookupConnection]"
-                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
-                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDW1]"
+                  connectionManagerID="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[KUASAR\MSSQLSERVER2019.CustomerDataWareHouse]"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>
@@ -652,7 +664,7 @@
                       refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PersonIDint]"
                       cachedDataType="i4"
                       cachedName="PersonIDint"
-                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PersonID]"
+                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SalesPersonId]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[PersonIDint]">
                       <properties>
                         <property
@@ -662,13 +674,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PersonName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UPersonName]"
+                      cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="PersonName"
-                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PersonName]"
-                      lineageId="Package\Data Flow Task\SalesPerson CSV.Outputs[Flat File Source Output].Columns[PersonName]">
+                      cachedName="UPersonName"
+                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SalesPersonName]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[UPersonName]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -680,14 +691,14 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PersonID]"
+                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SalesPersonId]"
                       dataType="i4"
-                      name="PersonID" />
+                      name="SalesPersonId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PersonName]"
+                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SalesPersonName]"
                       dataType="wstr"
                       length="50"
-                      name="PersonName" />
+                      name="SalesPersonName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -801,6 +812,10 @@
           Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="234,109.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Data Flow Task\Slowly Changing Dimension"
+          TopLeft="207.5,211.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="312,49.5">
@@ -823,10 +838,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Data Flow Task\Slowly Changing Dimension"
-          TopLeft="207.5,211.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="312,151.5">
@@ -940,18 +951,18 @@
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{2736BF66-21AB-4C29-B4E5-0A63EA2C2808}&lt;/ConnectionID&gt;
+  &lt;ConnectionID&gt;{9C938081-A70C-4BCA-AF98-1B6D682A6283}&lt;/ConnectionID&gt;
   &lt;TableName&gt;[dbo].[DimSalesPerson]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[PersonIDint]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;PersonID&lt;/ColumnName&gt;
+      &lt;ColumnName&gt;SalesPersonId&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;SalesPerson CSV.Outputs[Flat File Source Output].Columns[PersonName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;PersonName&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[UPersonName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SalesPersonName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
