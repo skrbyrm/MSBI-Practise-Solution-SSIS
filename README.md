@@ -3,7 +3,7 @@
 ### CustomerDB---CSV-to-Datawarehouse --- MSBI Complete Solution
 
 ### The project content will continue step by step.
-#### 1. SSIS
+### 1. SSIS
   * ETL (Load CSV-Source to Data Warehouse)
   * Data Flow - Control Flow
   * Conditional Split - Data Conversion
@@ -12,7 +12,7 @@
   * Lookup
   * Build - Deployment SSIS Packages
   
-#### 2. SSAS
+### 2. SSAS
   * Dimensions - Measures Tables- Star Schema
   * Create a Multidimensional SSAS Cube
   * Add DimTime Table with SSAS Time Series Wizard
@@ -20,7 +20,7 @@
   * Excel Display
   * Set Hierarchical Dimensions 
   
-#### 3. SSRS
+### 3. SSRS
   * Create a Simple Report with SSRS
   
 #### Data Flow - Control Flow - Conditional Split - Data Conversion - Lookup
