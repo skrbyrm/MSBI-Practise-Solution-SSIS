@@ -2,7 +2,7 @@
 ## Business Key Workshop
 ### CustomerDB---CSV-to-Datawarehouse --- MSBI Complete Solution
 
-### The project content will continue step by step.
+### Topics
 ### 1. SSIS
   * ETL (Load CSV-Source to Data Warehouse)
   * Data Flow - Control Flow
