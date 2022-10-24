@@ -32,9 +32,9 @@
 
 ![](https://github.com/skrbyrm/MSBI-Practise-Solution-SSIS/blob/master/Data/img/9.DeployResult.PNG)
 
-![](https://github.com/skrbyrm/MSBI-Practise-Solution-SSIS/blob/master/Data/img/10.CreateCube.PNG)
-
 ![](https://github.com/skrbyrm/MSBI-Practise-Solution-SSIS/blob/master/Data/img/11.SetDimensions-Fact-Star%20Schema.PNG)
+
+![](https://github.com/skrbyrm/MSBI-Practise-Solution-SSIS/blob/master/Data/img/10.CreateCube.PNG)
 
 ![](https://github.com/skrbyrm/MSBI-Practise-Solution-SSIS/blob/master/Data/img/12.DimTimeGenerate1.png)
 
