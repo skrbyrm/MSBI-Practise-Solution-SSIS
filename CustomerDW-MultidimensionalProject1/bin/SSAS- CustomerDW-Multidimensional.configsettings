@@ -16,19 +16,19 @@
         <ID>Dim States</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Sales Person</ID>
-      </Dimension>
-      <Dimension>
         <ID>Dim Country</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Product</ID>
       </Dimension>
       <Dimension>
+        <ID>Time</ID>
+      </Dimension>
+      <Dimension>
         <ID>Fact Customer</ID>
       </Dimension>
       <Dimension>
-        <ID>Time</ID>
+        <ID>Dim Sales Person</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

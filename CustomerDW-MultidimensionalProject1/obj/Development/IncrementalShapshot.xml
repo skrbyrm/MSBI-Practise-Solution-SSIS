@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,63 +19,63 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>LJKsjMWlZhR50JbLtocg8uf7eKY=10/14/2022 8:53:12 PM10/14/2022 8:45:42 PM</TimeStamp>
+        <TimeStamp>kveAmdAxrmgJawECFLKfFtA0VTg=10/23/2022 8:24:21 PM10/14/2022 8:45:42 PM</TimeStamp>
         <ID>
           <String>Customer Data Ware House</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>4xfm6M4ZzN8yQ02HrZZWzPJ30wo=10/15/2022 1:04:40 PM10/14/2022 5:41:17 PM</TimeStamp>
+        <TimeStamp>w8zqoKXALKLKfFInkeo4r7A0908=10/24/2022 5:51:22 PM10/14/2022 5:41:17 PM</TimeStamp>
         <ID>
           <String>Customer Data Ware House</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>9OAxB1eY7QBgFhMCpbRO2omp6Jo=10/14/2022 8:26:05 PM10/14/2022 8:25:18 PM</TimeStamp>
+        <TimeStamp>0uuUCKGJFVydW2Is271is9oWVgs=10/24/2022 1:02:20 PM10/24/2022 1:00:45 PM</TimeStamp>
         <ID>
           <String>Dim States</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>pohVdNCvU1u79I01kaFFk2iVJ+w=10/14/2022 8:26:05 PM10/14/2022 8:25:18 PM</TimeStamp>
-        <ID>
-          <String>Dim Sales Person</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6MWmaMEs9ecGbpRngVEB7T2GyzE=10/14/2022 8:26:05 PM10/14/2022 8:25:18 PM</TimeStamp>
+        <TimeStamp>NINNolg2YI1BSZ+0EWVvWhwt2Wg=10/24/2022 1:02:53 PM10/24/2022 1:00:45 PM</TimeStamp>
         <ID>
           <String>Dim Country</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>BQEmnJnLW9fWwbzB2VYL2Hi7HtY=10/14/2022 8:26:10 PM10/14/2022 8:25:18 PM</TimeStamp>
+        <TimeStamp>PUFA/tx/iy+isxkGbRYdUxb+aJw=10/24/2022 1:03:10 PM10/24/2022 1:00:45 PM</TimeStamp>
         <ID>
           <String>Dim Product</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>kARTr8f2IvOLz57ZPVafO+Vpbp4=10/14/2022 8:25:19 PM10/14/2022 8:25:18 PM</TimeStamp>
+        <TimeStamp>bQQ4Lys3yvaHtyR1q+gZIMxKQWI=10/24/2022 1:04:37 PM10/24/2022 1:00:45 PM</TimeStamp>
+        <ID>
+          <String>Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>aC3Xmsuado2SXFY1pMcPhjb8MGw=10/24/2022 1:00:46 PM10/24/2022 1:00:45 PM</TimeStamp>
         <ID>
           <String>Fact Customer</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>rwinBb8l0IjJi6zSoGWcg3HTPKE=10/15/2022 1:04:40 PM10/15/2022 12:56:43 PM</TimeStamp>
+        <TimeStamp>9z1FmBtjWXzPBBetA7TDSqKrtwc=10/24/2022 3:46:59 PM10/24/2022 3:41:44 PM</TimeStamp>
         <ID>
-          <String>Time</String>
+          <String>Dim Sales Person</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>QwnXzT1LmJr7hJES6X1lEfbNFLg=10/15/2022 1:04:40 PM10/14/2022 8:25:18 PM+v3WPSPZi/kHZY53Obr4lcDNhO8=10/14/2022 8:25:18 PM10/14/2022 8:25:18 PM</TimeStamp>
+        <TimeStamp>/jb3PwQyJUzrlKt1xa+kEW2iEdU=10/24/2022 3:46:57 PM10/24/2022 1:00:45 PM4vWPlBjD4dZf3FHXYZccwhs80UQ=10/24/2022 1:00:46 PM10/24/2022 1:00:45 PM</TimeStamp>
         <ID>
           <String>Customer Data Ware House</String>
         </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-10-15T10:31:33.68Z</LastDeployed>
+  <LastDeployed>2022-10-24T15:14:46.913333Z</LastDeployed>
 </DeploymentSnapshot>

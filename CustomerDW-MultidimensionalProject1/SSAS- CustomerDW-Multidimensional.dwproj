@@ -8,12 +8,12 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Customer Data Ware House.cube</Name>
-      <FullPath>Customer Data Ware House.cube</FullPath>
+      <Name>Customer Data Ware House 1.cube</Name>
+      <FullPath>Customer Data Ware House 1.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Customer Data Ware House.partitions</Name>
-          <FullPath>Customer Data Ware House.partitions</FullPath>
+          <Name>Customer Data Ware House 1.partitions</Name>
+          <FullPath>Customer Data Ware House 1.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
@@ -24,10 +24,6 @@
       <FullPath>Dim States.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Sales Person.dim</Name>
-      <FullPath>Dim Sales Person.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Country.dim</Name>
       <FullPath>Dim Country.dim</FullPath>
     </ProjectItem>
@@ -36,12 +32,16 @@
       <FullPath>Dim Product.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Fact Customer.dim</Name>
       <FullPath>Fact Customer.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Time.dim</Name>
-      <FullPath>Time.dim</FullPath>
+      <Name>Dim Sales Person.dim</Name>
+      <FullPath>Dim Sales Person.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
